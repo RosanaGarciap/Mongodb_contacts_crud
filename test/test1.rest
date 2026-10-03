@@ -1,0 +1,7 @@
+### Obtener todos los contactos
+GET http://localhost:8080/contacts
+
+### ---
+
+### Obtener un contacto por ID (Reemplaza el ID de ejemplo por uno real de tu base de datos)
+GET http://localhost:8080/contacts?id=6ac108bb87fc73a4a483e876
