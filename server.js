@@ -14,9 +14,14 @@ connectDB();
 app.use(express.json({extended : false}));
 
 //Default PORT
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 //Connect with routes folder
 app.use('/contacts', require('./routes/contacts'));
+//Home page
+app.get('/', (req,res) =>{
+    res.send("Rosana Garcia's webservices practice server");
+}
+);
 app.listen(port, () => console.log(`server started on port ${port}`));
 
