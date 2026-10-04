@@ -8,3 +8,93 @@ GET http://localhost:8080/contacts?id=6ac108bb87fc73a4a483e876
 
 ### Root path
 GET http://localhost:8080/
+
+### TEST contact 4: Ana López
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Ana",
+  "lastName": "López",
+  "email": "ana.lopez@test.com",
+  "favoriteColor": "Morado",
+  "birthday": "1992-11-04"
+}
+
+### TEST contact 5: Luis Rodríguez
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Luis",
+  "lastName": "Rodríguez",
+  "email": "luis.rodriguez@test.com",
+  "favoriteColor": "Negro",
+  "birthday": "1988-07-25"
+}
+
+### ==========================================
+### PRUEBA DE PUT (Actualizar contacto)
+### Retorna estatus 204 (No Content)
+### ==========================================
+PUT http://localhost:8080/contacts/6ac108e887fc73a4a483e877
+Content-Type: application/json
+
+{
+    "firstName": "Carlos",
+    "lastName": "Mendoza",
+    "email": "carlos.mendoza@example.com",
+    "favoriteColor": "Purple",
+    "birthday": "1998-11-06"
+}
+
+### ==========================================
+### PRUEBA DE DELETE (Eliminar contacto)
+### Retorna estatus 200 (OK)
+### ==========================================
+DELETE http://localhost:8080/contacts/6ac108bb87fc73a4a483e876
+
+### ==========================================
+### POST 2. RENDER TEST (Production)
+### ==========================================
+POST https://mongodb-contacts-crud.onrender.com/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Reina",
+  "lastName": "Quintero",
+  "email": "rquintero@gmail.com",
+  "favoriteColor": "Blanco",
+  "birthday": "2000-01-01"
+}
+
+### ==========================================
+### PUT 2 RENDER TEST (production)
+### Returns status 404 (No found)
+### ==========================================
+PUT https://mongodb-contacts-crud.onrender.com/contacts/6ac108bb87fc73a4a483e876
+Content-Type: application/json
+
+{
+    "firstName": "Carlos",
+    "lastName": "Mendoza",
+    "email": "carlos.mendoza@example.com",
+    "favoriteColor": "Rojo",
+    "birthday": "1998-11-06"
+}
+
+### ==========================================
+### PUT 3 RENDER TEST (production)
+### Returns status 204 (No content)
+### ==========================================
+PUT https://mongodb-contacts-crud.onrender.com/contacts/6ac104b687fc73a4a483e875
+Content-Type: application/json
+
+{
+    "firstName": "Juan Pablo",
+    "lastName": "Pérez",
+    "email": "juanp.perez@example.com",
+    "favoriteColor": "Rojo",
+    "birthday": "1995-01-15"
+}
+
