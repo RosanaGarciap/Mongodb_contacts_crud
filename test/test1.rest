@@ -54,6 +54,9 @@ Content-Type: application/json
 ### ==========================================
 DELETE http://localhost:8080/contacts/6ac108bb87fc73a4a483e876
 
+### Obtener todos los contactos
+GET https://mongodb-contacts-crud.onrender.com/contacts
+
 ### ==========================================
 ### POST 2. RENDER TEST (Production)
 ### ==========================================
