@@ -36,7 +36,7 @@ exports.getContacts = async (req, res) => {
     }
 }
 
-exports.getContactById = async (req,rest) =>{
+exports.getContactById = async (req,res) =>{
     try {
         //if URL contains id parameter then
         const contact = await Contact.findById(req.params.id);
