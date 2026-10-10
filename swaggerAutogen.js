@@ -5,7 +5,7 @@ const doc = {
         title: 'Contacts API',
         description: 'Contacts managger API',
     },
-    host: 'https://mongodb-contacts-crud.onrender.com/',
+    host: 'https://mongodb-contacts-crud.onrender.com',
     schemes: ['http', 'https'],
 definitions: {
         Contact: {
