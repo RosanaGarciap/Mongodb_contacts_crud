@@ -1,5 +1,8 @@
 
 require('dotenv').config() // Reading env variables must be the fisrt thing to do
+//IMPORT Swagger
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 const express = require('express');
 const app = express();
@@ -25,3 +28,5 @@ app.get('/', (req,res) =>{
 );
 app.listen(port, () => console.log(`server started on port ${port}`));
 
+// Show Swagger documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));

@@ -4,6 +4,7 @@ const contactsController = require('../controllers/contactsController');
 
 // GET routes for general  and id params searching
 router.get('/', contactsController.getContacts);
+router.get('/:id', contactsController.getContactById);
 
 //POST
 router.post('/', contactsController.createContact);

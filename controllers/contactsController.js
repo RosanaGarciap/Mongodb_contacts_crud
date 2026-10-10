@@ -27,21 +27,26 @@ const Contact = mongoose.models.Contact || mongoose.model('Contact', contactSche
 //GET: Request all contacts or one by ID
 exports.getContacts = async (req, res) => {
     try {
-        //if URL contains id parameter then
-        if (req.query.id) {
-            const contact = await Contact.findById(req.query.id);
-            if (!contact) {
-                return res.status(404).json({error: 'The contact doesn\'t exist'});
-            }
-            return res.status(200).json(contact);
-        }
-
         // If there is no id returns the whole list
         const contacts = await Contact.find();
         return res.status(200).json(contacts);
     } catch (error) {
         //Internal server error
         res.status(500).json({error: error.message});
+    }
+}
+
+exports.getContactById = async (req,rest) =>{
+    try {
+        //if URL contains id parameter then
+        const contact = await Contact.findById(req.params.id);
+        if (!contact) {
+            return res.status(404).json({error: 'The contact doesn\'t exist'});
+        }
+        return res.status(200).json(contact);        
+    } catch (error) {
+    //Internal server error
+    res.status(500).json({error: error.message});        
     }
 }
 
