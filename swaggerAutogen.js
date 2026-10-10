@@ -19,6 +19,6 @@ definitions: {
 };
 const outputFile = './swagger.json';
 // ponts to the path where all routes to GET, POST, PUT and DELETE are listed (routes/contacts.js in this case)
-const endpointFiles = ['./routes/contacts.js']; 
+const endpointFiles = ['./server.js']; 
 
 swaggerAutogen(outputFile, endpointFiles, doc);
