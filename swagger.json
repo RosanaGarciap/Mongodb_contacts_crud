@@ -8,8 +8,8 @@
   "host": "mongodb-contacts-crud.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {
